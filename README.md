@@ -13,6 +13,10 @@ Step 2:
         dvc remote modify origin --local user muralidharang2000
         dvc remote modify origin --local password $DAGSHUB_TOKEN
 
+        dvc add data/raw
+        git add data/raw.dvc data/.gitignore
+        dvc config core.autostage true
+        
         dvc pull -r origin
         dvc add data/raw
         dvc push -r origin    
