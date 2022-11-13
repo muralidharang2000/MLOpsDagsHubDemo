@@ -21,3 +21,14 @@ Step 2:
         dvc add data/raw
         dvc push -r origin    
 
+Step 3:
+    install mlflow
+
+    # add the following in the python code!
+    mlflow.set_tracking_uri("https://dagshub.com/sashicds/MLOPS-Dagshub.mlflow")
+    tracking_uri = mlflow.get_tracking_uri()
+    print("Current tracking uri: {}".format(tracking_uri))
+
+    export MLFLOW_TRACKING_USERNAME=sashicds
+    export MLFLOW_TRACKING_PASSWORD=$DAGSHUB_TOKEN
+
